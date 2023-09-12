@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "master.html" %}
 
-<h1>Members</h1>
-  
-<ul>
-  {% for x in djangoapp %}
-  <li><a href="memberdetails/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
-  {% endfor %}
-</ul>
+{% block title %}
+    My Tennis Club - List of all members
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+    <p><a href="/">Home</a></p>
+
+    <h1>Members</h1>
+    
+    <ul>
+        {% for x in djangoapp %}
+        <li><a href="memberdetails/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
